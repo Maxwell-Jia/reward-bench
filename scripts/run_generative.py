@@ -154,7 +154,7 @@ def main():
             n=1,
             temperature=0,
             top_p=1,
-            max_tokens=2048,
+            max_tokens=8192,
             stop_token_ids=stop_token_ids,
         )
 
@@ -173,6 +173,9 @@ def main():
         model_modifier = "gemini"
     elif "RISE-Judge" in args.model:
         model_modifier = "RISE-Judge"
+    # for Reward-Reasoning-Model
+    elif "RRM" in args.model:
+        model_modifier = "RRM"
     else:
         model_modifier = None
 
