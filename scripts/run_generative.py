@@ -176,6 +176,9 @@ def main():
     # for Reward-Reasoning-Model
     elif "RRM" in args.model:
         model_modifier = "RRM"
+    # for RM-R1, we use the same prompt as the one in the paper
+    elif "RM-R1" in args.model:
+        model_modifier = "RM-R1"
     else:
         model_modifier = None
 
