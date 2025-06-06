@@ -1,8 +1,16 @@
 <div align="center">
   <h1>RewardBench: Evaluating Reward Models</h1>
-  <p>
+  <p> V2 (<strong>NEW!</strong>):
   <a href="https://huggingface.co/spaces/allenai/reward-bench">Leaderboard</a> 📐 |
-  <a href="https://huggingface.co/datasets/allenai/reward-bench">RewardBench Dataset</a> |
+  <a href="https://huggingface.co/datasets/allenai/reward-bench-2">Eval. Dataset</a> |
+  <a href="https://huggingface.co/datasets/allenai/reward-bench-2-results">Results</a> 📊 | 
+  <a href="https://huggingface.co/collections/allenai/reward-bench-2-683d2612a4b3e38a3e53bb51">Trained Models</a> 🏆 | 
+  <a href="https://arxiv.org/abs/2506.01937"> Paper📝 </a>
+</p>
+
+  <p> V1:
+  <a href="https://huggingface.co/spaces/allenai/reward-bench">Leaderboard</a> 📐 |
+  <a href="https://huggingface.co/datasets/allenai/reward-bench">Eval. Dataset</a> |
   <a href="https://huggingface.co/datasets/allenai/preference-test-sets">Existing Test Sets</a> |
   <a href="https://huggingface.co/datasets/allenai/reward-bench-results">Results</a> 📊 |
   <a href="https://arxiv.org/abs/2403.13787"> Paper📝</a>
@@ -30,6 +38,7 @@ The repository includes the following:
 The two primary scripts to generate results (more in `scripts/`):
 1. `scripts/run_rm.py`: Run evaluations for reward models.
 2. `scripts/run_dpo.py`: Run evaluations for direct preference optimization (DPO) models (and other models using implicit rewards, such as KTO).
+3. `scripts/run_v2.py`: Run evaluations for RewardBench 2, with special data handling for best-of-4 and Ties data.
 
 ## Quick Usage
 RewardBench let's you quickly evaluate any reward model on any preference set. 
@@ -39,7 +48,11 @@ To install for quick usage, install with pip as:
 ```
 pip install rewardbench
 ```
-Then, run a following:
+**To run RewardBench 2, you can run the following command, substituting the model you would like to run and adding any additional model-specific parameters, which can be found in the [eval configs](https://github.com/allenai/reward-bench/blob/main/scripts/configs/eval_configs.yaml) in `scripts/configs/eval_configs.yaml`**
+```
+python scripts/run_v2.py --model={yourmodel}
+```
+Or, to run RewardBench instead, run the following:
 ```
 rewardbench --model={yourmodel} --dataset={yourdataset} --batch_size=8
 ```
@@ -285,5 +298,17 @@ Please cite our work with the following:
       eprint={2403.13787},
       archivePrefix={arXiv},
       primaryClass={cs.LG}
+}
+```
+
+```
+@misc{malik2025rewardbench2advancingreward,
+      title={RewardBench 2: Advancing Reward Model Evaluation}, 
+      author={Saumya Malik and Valentina Pyatkin and Sander Land and Jacob Morrison and Noah A. Smith and Hannaneh Hajishirzi and Nathan Lambert},
+      year={2025},
+      eprint={2506.01937},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2506.01937}, 
 }
 ```

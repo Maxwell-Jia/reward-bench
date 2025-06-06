@@ -19,7 +19,7 @@ from setuptools import find_packages, setup
 # this has not yet been pushed to pypyi-test
 setup(
     name="rewardbench",
-    version="0.1.4",  # do not import from init, or we get a weird build error
+    version="0.1.5",  # do not import from init, or we get a weird build error
     author="Nathan Lambert",
     author_email="nathanl@allenai.org",
     description="Tools for evaluating reward models",
@@ -56,7 +56,7 @@ setup(
         "tokenizers",
         "torch",  # install before pip install -e . for best experience
         "tiktoken",  # unpinned for vllm dependency compatibility
-        "transformers==4.52.3",  # pinned at most recent version
+        "transformers==4.51.0",  # pinned at most recent version
         "trl>=0.8.2",  # fixed transformers import error, for DPO
         "wandb",  # for loading model path / reivisions from wandb on cli
         # peft, einops, and deepspeed removed from experimental version with training code

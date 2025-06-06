@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-__version__ = "0.1.4"
+__version__ = "0.1.5"
 from .chattemplates import *  # noqa
 from .dpo import DPOInference
 from .models import DPO_MODEL_CONFIG, REWARD_MODEL_CONFIG
@@ -22,8 +22,10 @@ from .utils import (
     load_bon_dataset,
     load_bon_dataset_v2,
     load_eval_dataset,
+    load_eval_dataset_multi,
     prepare_dialogue,
     prepare_dialogue_from_tokenizer,
+    process_single_model,
     reroll_and_score_dataset,
     save_to_hub,
     torch_dtype_mapping,
@@ -35,9 +37,11 @@ __all__ = [
     DPO_MODEL_CONFIG,
     load_bon_dataset,
     load_eval_dataset,
+    load_eval_dataset_multi,
     load_and_process_dataset,
     prepare_dialogue,
     prepare_dialogue_from_tokenizer,
+    process_single_model,
     REWARD_MODEL_CONFIG,
     save_to_hub,
     torch_dtype_mapping,
